@@ -1,37 +1,114 @@
-# VSpark Project Exhibition (real website with database)
+# VSpark – Project Exhibition Platform
 
-Multi-university project exhibition: students register, submit projects (with PDF), supervisors approve or reject, and approved projects show on the public showcase.
+A web-based project exhibition platform designed to showcase university students' projects, encourage collaboration, and provide a centralized space for discovering innovative academic work.
 
-## Chalane ka tareeqa (Run)
-1. Node.js 18 ya us se naya install karo (https://nodejs.org).
-2. Is folder mein terminal kholo aur ye likho:
-   ```
-   npm install
-   npm start
-   ```
-3. Browser mein kholo: http://localhost:3000
+## 🌐 Live Demo
 
-Pehli dafa chalane par database (`exhibition.db`) khud ban jata hai, saath mein universities (Vehari, Burewala, Multan, Sahiwal) aur ek admin.
+Live Website:(https://project-exhibition-website-production.up.railway.app/)
 
-**Admin login:** `admin@vspark.pk` / `Admin@12345` (pehle password badal lo).
-Badalne ke liye pehli dafa chalane se pehle `ADMIN_EMAIL` aur `ADMIN_PASSWORD` set karo.
 
-**Demo data (optional):** `npm run seed` (8 projects, supervisors aur students). Sab demo accounts ka password `demo123`:
-`sana@demo.pk` (supervisor), `ali@demo.pk` (student).
+### Homepage
+<img width="938" height="418" alt="image" src="https://github.com/user-attachments/assets/ea4f8dff-ab47-46db-ab2f-20f17185499f" />
 
-## Kaise kaam karta hai
-- **Register:** student ya supervisor apni university ka naam khud likhta hai. Agar naam list mein nahi to wo khud add ho jata hai.
-- **Student panel:** project form + PDF upload, apne projects ka status (pending / approved / rejected).
-- **Supervisor panel:** sirf apne assign hue projects dekhta hai, approve ya reject (reason ke saath).
-- **Admin:** sab projects aur sab users dekhta hai, project delete kar sakta hai.
-- **Public:** search, category filter, university filter, top 3, like/save (login chahiye).
 
-## Files
-- `server.js` – API (login, register, projects, review, likes)
-- `db.js` – SQLite database tables
-- `seed.js` – demo data
-- `public/` – website (index.html, app.js, style.css, assets)
-- `uploads/` – uploaded PDF files
+### Project Exhibition
+<img width="941" height="356" alt="image" src="https://github.com/user-attachments/assets/e6d82bea-f53f-4202-8e4d-ea1e5ab98a63" />
 
-## Security
-Passwords bcrypt se hash hote hain, login cookie httpOnly hai, 8 galat attempts ke baad 10 minute ka block. Internet par rakhne se pehle HTTPS lagao aur `NODE_ENV=production` set karo.
+
+## ✨ Features
+
+- **User Authentication:** Secure registration and login system.
+- **Project Showcase:** Students can publish and showcase their academic projects.
+- **PDF Uploads:** Upload project documentation and supporting files.
+- **Project Interaction:** Users can like and review projects.
+- **University Support:** University-based project organization.
+- **Admin Panel:** Administrative access and user management.
+- **Secure Authentication:** JWT-based authentication and password hashing.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Node.js | Backend runtime |
+| Express.js | Web framework |
+| SQLite | Database |
+| Better-SQLite3 | Database integration |
+| JavaScript | Application logic |
+| JWT | Authentication |
+| bcryptjs | Password hashing |
+| Multer | File uploads |
+
+## 🚀 Run Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/salmanDevHub/Project-Exhibition-Website.git
+```
+
+### 2. Navigate to Project Directory
+
+```bash
+cd Project-Exhibition-Website
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env` file if your application is configured to load environment variables, and configure the required values:
+
+```env
+PORT=3000
+NODE_ENV=development
+JWT_SECRET=your_secure_secret
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_secure_password
+```
+
+### 5. Start the Application
+
+```bash
+npm start
+```
+
+Open your browser at:
+
+```text
+http://localhost:3000
+```
+
+## 📁 Project Structure
+
+```text
+Project-Exhibition-Website/
+│
+├── server.js
+├── db.js
+├── package.json
+├── package-lock.json
+├── uploads/
+├── screenshots/
+└── README.md
+```
+
+## ☁️ Deployment
+
+The application is deployed using **Railway**, making it accessible online through a public URL.
+
+## 🔐 Security
+
+- Password hashing using bcryptjs.
+- JWT-based authentication.
+- Secure cookie configuration for production.
+- Role-based administrative access.
+
+## 👨‍💻 Developer
+
+**Salman Shahid**
+
+BS Software Engineering  
